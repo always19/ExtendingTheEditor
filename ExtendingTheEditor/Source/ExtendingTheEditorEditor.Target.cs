@@ -5,21 +5,9 @@ using System.Collections.Generic;
 
 public class ExtendingTheEditorEditorTarget : TargetRules
 {
-	public ExtendingTheEditorEditorTarget(TargetInfo Target)
+	public ExtendingTheEditorEditorTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Editor;
-	}
-
-	//
-	// TargetRules interface.
-	//
-
-	public override void SetupBinaries(
-		TargetInfo Target,
-		ref List<UEBuildBinaryConfiguration> OutBuildBinaryConfigurations,
-		ref List<string> OutExtraModuleNames
-		)
-	{
-		OutExtraModuleNames.Add("ExtendingTheEditor");
+		ExtraModuleNames.Add("ExtendingTheEditor");
 	}
 }
